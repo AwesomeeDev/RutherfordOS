@@ -1,47 +1,118 @@
 body {
   margin: 0;
-  font-family: Arial;
-  background: #111;
-  color: white;
+  font-family: system-ui, Arial;
 }
 
-/* LOGIN */
-#loginScreen {
+/* ---------------- LOGIN ---------------- */
+#login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0a3d91, #ffffff);
+}
+
+.loginBox {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 300px;
   text-align: center;
-  margin-top: 120px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.logo {
+  width: 80px;
 }
 
 input {
-  padding: 8px;
-  margin: 5px;
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 
-/* DESKTOP */
-#icons {
-  padding: 20px;
-}
-
-#icons div {
-  margin: 10px;
+button {
+  padding: 10px;
+  width: 100%;
+  background: #0a3d91;
+  color: white;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
+}
+
+/* ---------------- DESKTOP ---------------- */
+#desktop {
+  display: none;
+  height: 100vh;
+  background: url("banner.jpg") center/cover;
 }
 
 /* TASKBAR */
 #taskbar {
   position: fixed;
-  bottom: 0;
+  top: 0;
   width: 100%;
-  background: black;
-  padding: 5px;
+  height: 50px;
+  background: rgba(10, 61, 145, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0 15px;
+  backdrop-filter: blur(10px);
+}
+
+#taskbar img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+/* ICONS */
+#icons {
+  padding: 80px 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.icon {
+  width: 100px;
+  padding: 10px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.icon:hover {
+  transform: scale(1.05);
 }
 
 /* WINDOWS */
 .window {
   display: none;
   position: absolute;
-  top: 100px;
-  left: 100px;
-  background: #222;
+  top: 120px;
+  left: 200px;
+  width: 350px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.title {
+  background: #0a3d91;
+  color: white;
   padding: 10px;
-  width: 300px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  border: none;
 }
