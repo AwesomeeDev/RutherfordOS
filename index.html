@@ -1,19 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RutherfordOS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+<!-- LOGIN -->
 <div id="loginScreen">
   <h1>RutherfordOS</h1>
 
   <input id="email" placeholder="student@rutherford.school.nz">
   <button onclick="sendCode()">Send Code</button>
 
-  <div id="codeSection" style="display:none">
-    <p>A 6-digit code was sent to your email</p>
-
-    <input id="codeInput" placeholder="Enter 6-digit code">
-    <button onclick="verifyCode()">Verify</button>
+  <div id="codeBox" style="display:none">
+    <p>Enter 6-digit code</p>
+    <input id="codeInput">
+    <button onclick="verifyCode()">Login</button>
   </div>
 
   <p id="loginError"></p>
 </div>
 
-<div id="os" style="display:none">
-  <h2>Welcome to RutherfordOS</h2>
+<!-- DESKTOP -->
+<div id="desktop" style="display:none">
+
+  <div id="taskbar">
+    RutherfordOS
+  </div>
+
+  <div id="icons">
+    <div onclick="openApp('classroom')">📚 Classroom</div>
+    <div onclick="openApp('docs')">📄 Docs</div>
+    <div onclick="openApp('sheets')">📊 Sheets</div>
+    <div onclick="openMail()">📧 Mail</div>
+    <div onclick="openSearch()">🔎 Search</div>
+  </div>
+
+  <!-- CLASSROOM -->
+  <div id="classroom" class="window">
+    <h3>Rutherford Classroom</h3>
+    <p>No assignments yet</p>
+    <button onclick="closeApp('classroom')">Close</button>
+  </div>
+
+  <!-- DOCS -->
+  <div id="docs" class="window">
+    <h3>Rutherford Docs</h3>
+    <textarea id="docText"></textarea>
+    <button onclick="saveDoc()">Save</button>
+    <button onclick="closeApp('docs')">Close</button>
+  </div>
+
+  <!-- SHEETS -->
+  <div id="sheets" class="window">
+    <h3>Rutherford Sheets</h3>
+    <table border="1">
+      <tr><td contenteditable>A1</td><td contenteditable>B1</td></tr>
+      <tr><td contenteditable>A2</td><td contenteditable>B2</td></tr>
+    </table>
+    <button onclick="closeApp('sheets')">Close</button>
+  </div>
+
 </div>
+
+<script src="script.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>
