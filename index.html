@@ -1,105 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RutherfordOS</title>
+  <title>RutherfordOS Login</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
 </head>
+<body class="loginBody">
 
-<body>
+<div class="loginBox">
+  <img src="icon.png" class="logo">
 
-<!-- LOGIN -->
-<div id="login">
-  <div class="loginBox">
-    <img src="icon.png" class="logo">
+  <h1>RutherfordOS</h1>
 
-    <h1>RutherfordOS</h1>
-    <p>Sign in with your school account</p>
+  <input id="email" placeholder="student@rutherford.school.nz">
+  <button onclick="sendCode()">Send Code</button>
 
-    <input id="email" placeholder="student@rutherford.school.nz">
-    <button onclick="sendCode()">Send Code</button>
-
-    <div id="codeArea" style="display:none">
-      <input id="codeInput" placeholder="6-digit code">
-      <button onclick="verifyCode()">Login</button>
-    </div>
-
-    <p id="error"></p>
-  </div>
-</div>
-
-<!-- DESKTOP -->
-<div id="desktop">
-
-  <!-- TOP BAR -->
-  <div id="taskbar">
-    <div class="left">
-      <img src="icon.png">
-      <span>RutherfordOS</span>
-    </div>
-
-    <div class="right">
-      <span id="clock"></span>
-    </div>
+  <div id="codeBox" style="display:none">
+    <input id="codeInput" placeholder="6-digit code">
+    <button onclick="verifyCode()">Login</button>
   </div>
 
-  <!-- WALLPAPER -->
-  <div id="wallpaper"></div>
-
-  <!-- ICONS -->
-  <div id="icons">
-    <div onclick="openApp('classroom')" class="icon">
-      📚 Classroom
-    </div>
-
-    <div onclick="openApp('docs')" class="icon">
-      📄 Docs
-    </div>
-
-    <div onclick="openApp('sheets')" class="icon">
-      📊 Sheets
-    </div>
-
-    <div onclick="openMail()" class="icon">
-      📧 Mail
-    </div>
-
-    <div onclick="openSearch()" class="icon">
-      🔎 Search
-    </div>
-  </div>
-
-  <!-- WINDOWS -->
-  <div id="classroom" class="window">
-    <div class="title">Rutherford Classroom</div>
-    <p>Assignments will appear here</p>
-    <button onclick="closeApp('classroom')">Close</button>
-  </div>
-
-  <div id="docs" class="window">
-    <div class="title">Rutherford Docs</div>
-    <textarea></textarea>
-    <button onclick="closeApp('docs')">Close</button>
-  </div>
-
-  <div id="sheets" class="window">
-    <div class="title">Rutherford Sheets</div>
-    <table>
-      <tr><td contenteditable>A1</td><td contenteditable>B1</td></tr>
-      <tr><td contenteditable>A2</td><td contenteditable>B2</td></tr>
-    </table>
-    <button onclick="closeApp('sheets')">Close</button>
-  </div>
-
+  <p id="error"></p>
 </div>
 
 <script src="script.js"></script>
-
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
-}
-</script>
-
 </body>
 </html>
