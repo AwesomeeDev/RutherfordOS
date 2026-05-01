@@ -1,118 +1,72 @@
 body {
   margin: 0;
-  font-family: system-ui, Arial;
+  font-family: Arial;
+  background: #f4f8ff;
 }
 
-/* ---------------- LOGIN ---------------- */
-#login {
-  height: 100vh;
+/* LOGIN */
+.loginBody {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #0a3d91, #ffffff);
+  height: 100vh;
+  background: #0a3d91;
 }
 
 .loginBox {
   background: white;
   padding: 30px;
-  border-radius: 20px;
-  width: 300px;
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .logo {
   width: 80px;
 }
 
-input {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+/* HEADER */
+header {
+  background: white;
+  border-bottom: 3px solid #0a3d91;
 }
 
-button {
-  padding: 10px;
+.banner {
   width: 100%;
-  background: #0a3d91;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
+  height: 120px;
+  object-fit: cover;
 }
 
-/* ---------------- DESKTOP ---------------- */
-#desktop {
-  display: none;
-  height: 100vh;
-  background: url("banner.jpg") center/cover;
-}
-
-/* TASKBAR */
-#taskbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 50px;
-  background: rgba(10, 61, 145, 0.9);
+nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  padding: 0 15px;
-  backdrop-filter: blur(10px);
+  gap: 15px;
+  padding: 10px;
 }
 
-#taskbar img {
-  width: 30px;
-  margin-right: 10px;
+nav a {
+  text-decoration: none;
+  color: #0a3d91;
+  font-weight: bold;
 }
 
-/* ICONS */
-#icons {
-  padding: 80px 20px;
+/* APPS */
+.apps {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  padding: 30px;
 }
 
-.icon {
-  width: 100px;
-  padding: 10px;
-  background: rgba(255,255,255,0.8);
-  border-radius: 15px;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.icon:hover {
-  transform: scale(1.05);
-}
-
-/* WINDOWS */
-.window {
-  display: none;
-  position: absolute;
-  top: 120px;
-  left: 200px;
-  width: 350px;
+.app {
   background: white;
+  padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-  overflow: hidden;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.title {
-  background: #0a3d91;
-  color: white;
-  padding: 10px;
-}
-
-textarea {
+/* GOOGLE */
+.googleFrame {
   width: 100%;
-  height: 150px;
+  height: 80vh;
   border: none;
 }
