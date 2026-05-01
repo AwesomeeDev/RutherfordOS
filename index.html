@@ -9,55 +9,82 @@
 <body>
 
 <!-- LOGIN -->
-<div id="loginScreen">
-  <h1>RutherfordOS</h1>
+<div id="login">
+  <div class="loginBox">
+    <img src="icon.png" class="logo">
 
-  <input id="email" placeholder="student@rutherford.school.nz">
-  <button onclick="sendCode()">Send Code</button>
+    <h1>RutherfordOS</h1>
+    <p>Sign in with your school account</p>
 
-  <div id="codeBox" style="display:none">
-    <p>Enter 6-digit code</p>
-    <input id="codeInput">
-    <button onclick="verifyCode()">Login</button>
+    <input id="email" placeholder="student@rutherford.school.nz">
+    <button onclick="sendCode()">Send Code</button>
+
+    <div id="codeArea" style="display:none">
+      <input id="codeInput" placeholder="6-digit code">
+      <button onclick="verifyCode()">Login</button>
+    </div>
+
+    <p id="error"></p>
   </div>
-
-  <p id="loginError"></p>
 </div>
 
 <!-- DESKTOP -->
-<div id="desktop" style="display:none">
+<div id="desktop">
 
+  <!-- TOP BAR -->
   <div id="taskbar">
-    RutherfordOS
+    <div class="left">
+      <img src="icon.png">
+      <span>RutherfordOS</span>
+    </div>
+
+    <div class="right">
+      <span id="clock"></span>
+    </div>
   </div>
 
+  <!-- WALLPAPER -->
+  <div id="wallpaper"></div>
+
+  <!-- ICONS -->
   <div id="icons">
-    <div onclick="openApp('classroom')">📚 Classroom</div>
-    <div onclick="openApp('docs')">📄 Docs</div>
-    <div onclick="openApp('sheets')">📊 Sheets</div>
-    <div onclick="openMail()">📧 Mail</div>
-    <div onclick="openSearch()">🔎 Search</div>
+    <div onclick="openApp('classroom')" class="icon">
+      📚 Classroom
+    </div>
+
+    <div onclick="openApp('docs')" class="icon">
+      📄 Docs
+    </div>
+
+    <div onclick="openApp('sheets')" class="icon">
+      📊 Sheets
+    </div>
+
+    <div onclick="openMail()" class="icon">
+      📧 Mail
+    </div>
+
+    <div onclick="openSearch()" class="icon">
+      🔎 Search
+    </div>
   </div>
 
-  <!-- CLASSROOM -->
+  <!-- WINDOWS -->
   <div id="classroom" class="window">
-    <h3>Rutherford Classroom</h3>
-    <p>No assignments yet</p>
+    <div class="title">Rutherford Classroom</div>
+    <p>Assignments will appear here</p>
     <button onclick="closeApp('classroom')">Close</button>
   </div>
 
-  <!-- DOCS -->
   <div id="docs" class="window">
-    <h3>Rutherford Docs</h3>
-    <textarea id="docText"></textarea>
-    <button onclick="saveDoc()">Save</button>
+    <div class="title">Rutherford Docs</div>
+    <textarea></textarea>
     <button onclick="closeApp('docs')">Close</button>
   </div>
 
-  <!-- SHEETS -->
   <div id="sheets" class="window">
-    <h3>Rutherford Sheets</h3>
-    <table border="1">
+    <div class="title">Rutherford Sheets</div>
+    <table>
       <tr><td contenteditable>A1</td><td contenteditable>B1</td></tr>
       <tr><td contenteditable>A2</td><td contenteditable>B2</td></tr>
     </table>
