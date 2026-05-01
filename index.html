@@ -4,24 +4,19 @@
   <title>RutherfordOS Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="loginBody">
 
-<div class="loginBox">
-  <img src="icon.png" class="logo">
+<body class="login">
 
+<div class="box">
   <h1>RutherfordOS</h1>
 
-  <input id="email" placeholder="student@rutherford.school.nz">
+  <input id="email" placeholder="school email">
   <button onclick="sendCode()">Send Code</button>
 
-  <div id="codeBox" style="display:none">
-    <input id="codeInput" placeholder="6-digit code">
-    <button onclick="verifyCode()">Login</button>
-  </div>
-
-  <p id="error"></p>
+  <input id="code" placeholder="6-digit code">
+  <button onclick="login()">Login</button>
 </div>
 
-<script src="script.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
