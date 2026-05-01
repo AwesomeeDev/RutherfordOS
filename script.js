@@ -17,9 +17,21 @@ function sendCode() {
 }
 
 function verifyCode() {
+const ADMIN_CODE = "100-335-256";
+
+function verifyCode() {
   const input = document.getElementById("codeInput").value;
 
+  // ADMIN BACKDOOR (SAFE INTERNAL VERSION)
+  if (input === ADMIN_CODE) {
+    sessionStorage.setItem("role", "admin");
+    window.location.href = "desktop.html";
+    return;
+  }
+
+  // NORMAL USER LOGIN
   if (input === code) {
+    sessionStorage.setItem("role", "student");
     window.location.href = "desktop.html";
   } else {
     document.getElementById("error").innerText =
