@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RutherfordOS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <img src="banner.jpg" class="banner">
+</header>
+
+<div class="grid">
+
+  <div class="app" onclick="openApp('classroom')">📚 Classroom</div>
+  <div class="app" onclick="openApp('docs')">📄 Docs</div>
+  <div class="app" onclick="openApp('sheets')">📊 Sheets</div>
+  <div class="app" onclick="openApp('search')">🔎 Search</div>
+  <div class="app" onclick="openApp('mail')">📧 Mail</div>
+  <div class="app" onclick="openApp('bridge')">🌐 Bridge</div>
+
+</div>
+
+<!-- WINDOWS -->
+
+<div id="classroom" class="window"></div>
+<div id="docs" class="window"></div>
+<div id="sheets" class="window"></div>
+<div id="search" class="window">
+  <iframe src="https://www.google.com/webhp?igu=1"></iframe>
+</div>
+<div id="mail" class="window">
+  <iframe src="https://outlook.live.com"></iframe>
+</div>
+<div id="bridge" class="window"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
