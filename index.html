@@ -7,14 +7,20 @@
 
 <body class="login">
 
-<div class="box">
+<div class="loginBox">
+  <img src="icon.png" class="icon">
+
   <h1>RutherfordOS</h1>
 
   <input id="email" placeholder="school email">
+
   <button onclick="sendCode()">Send Code</button>
 
   <input id="code" placeholder="6-digit code">
-  <button onclick="login()">Login</button>
+
+  <button onclick="login()">Enter</button>
+
+  <p id="msg"></p>
 </div>
 
 <script src="app.js"></script>
