@@ -1,0 +1,19 @@
+<div id="loginScreen">
+  <h1>RutherfordOS</h1>
+
+  <input id="email" placeholder="student@rutherford.school.nz">
+  <button onclick="sendCode()">Send Code</button>
+
+  <div id="codeSection" style="display:none">
+    <p>A 6-digit code was sent to your email</p>
+
+    <input id="codeInput" placeholder="Enter 6-digit code">
+    <button onclick="verifyCode()">Verify</button>
+  </div>
+
+  <p id="loginError"></p>
+</div>
+
+<div id="os" style="display:none">
+  <h2>Welcome to RutherfordOS</h2>
+</div>
