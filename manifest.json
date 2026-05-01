@@ -1,8 +1,0 @@
-{
-  "name": "RutherfordOS",
-  "short_name": "RutherfordOS",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#0a3d91",
-  "theme_color": "#0a3d91"
-}
